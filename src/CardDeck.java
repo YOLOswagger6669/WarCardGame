@@ -1,33 +1,21 @@
-// create class CardDeck that extends CardList
-public class CardDeck extends CardList
-{
-  int suits=4;
-  int ranks=13;
-  int swaps=10000;
-  
-  public CardDeck()
-  {
-    super();
+public class CardDeck extends CardList {
+  private int suits;
+  private int ranks;
+  private int swaps=10000;
+  public CardDeck() {
     Card temp;
-    for(int s=1; s<=suits; s++)
-    {
-      for(int r=1; r<=ranks; r++)
-      {
-        temp=new Card(s, r);
+    for(int suit=1; suit<=suits; suit++) {
+      for(int rank=1; rank<=ranks; ranks++) {
+        temp=new Card(suit, rank);
         this.addCardToBottom(temp);
       }
     }
   }
-  
-  //shuffles deck
-  public void shuffle()
-  {
-    Card c;
-    for(int i=0; i<swaps; i++)
-    {
-      //removes random card from deck, and adds it to the bottom. 
-      c=removeRandomCard();
-      this.addCardToBottom(c);
+  public void Shuffle() {
+    Card card;
+    for(int count=0; count<10000; count++) {
+      card=removeRandomCard();
+      addCardToBottom(card);
     }
   }
 }
