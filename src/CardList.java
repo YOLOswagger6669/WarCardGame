@@ -1,49 +1,30 @@
-// create class CardList
 import java.util.*;
-
-public class CardList
-{
-  private ArrayList<Card> cards;
-  Random random = new Random();
-  
-  public CardList()
-  {
+public class CardList {
+  private ArrayList <Card> cards;
+  private Random random=new Random();
+  public CardList() {
     cards=new ArrayList<Card>();
   }
-  
-  public int size()
-  {
+  public int size() {
     return cards.size();
   }
-  
-  public void addCardToBottom(Card c)
-  {
-    cards.add(c);
+  public void addCardToBottom(Card n) {
+    cards.add(n);
   }
-  
-  public void addCardToTop(Card c)
-  {
-    cards.add(0, c);
+  public void addCardToTop(Card n) {
+    cards.add(0, n);
   }
-  
-  public Card takeCardFromTop()
-  {
-    Card temp= cards.get(0);
+  public Card takeCardFromTop() {
     cards.remove(0);
-    return temp;
+    Card card=cards.get(0);
+    return card;
   }
-  
-  public Card removeRandomCard()
-  {
-    int r=random.nextInt(cards.size());
-    Card temp= cards.get(r);
-    cards.remove(r);
-    return temp;
+  public Card removeRandomCard() {
+    int randCardNum=random.nextInt(cards.size());
+    cards.remove(cards.get(randCardNum));
+    return cards.get(randCardNum);
   }
-  
-  public Card get(int i)
-  {
-    return cards.get(i);
+  public Card get(int n) {
+    return cards.get(n);
   }
-  
 }
